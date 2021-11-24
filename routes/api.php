@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Product;
+use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,10 +17,44 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/products', function() {
-    $text = "Here will display all products";
-    return $text;
-});
+// ** Display All Products **
+Route::get('/products', [ProductController::class,'index']);
+
+// Route::get('/products', function() {
+//     // return Product::all();
+//     return DB::table('products')
+//             ->orderBy('id', 'DESC')
+//             ->get();
+    
+// });
+
+
+// ** Store Product **
+Route::post('/products',[ProductController::class,'store']);
+// Route::post('/products', function(Request $request) {
+//      Product::create(
+//         [
+//             'name' => $request->name, 
+//             'slug' => $request->slug, 
+//             'price' => $request->price
+//         ]
+//     );
+//     return "Created Successfully";
+// });
+
+
+// ** Display Product **
+Route::get('/product/{id}',[ProductController::class,'show']);
+
+// ** Update Product **
+Route::post('/product/{id}',[ProductController::class,'update']);
+
+// ** Delete Product **
+Route::get('product/delete/{id}',[ProductController::class, 'destroy']);
+
+
+// ** Search Products **
+Route::get('product/search/{name}',[ProductController::class, 'search']);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
