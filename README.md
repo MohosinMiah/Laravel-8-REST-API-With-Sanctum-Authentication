@@ -21,3 +21,10 @@
 <h3> 2) Migrate : php artisan migrate </h3>
 
 <h3> 3) Product Controller : php artisan make:controller ProductController --api </h3>
+
+<h3> Added Laravel Sanctum For API Authentication </h3>
+
+<p> More Details : <a href="https://laravel.com/docs/8.x/sanctum"  >Laravel Sanctum</a> </p>
+
+<h3> Authentication Controller : php artisan make:controller AuthController </h3>
+
