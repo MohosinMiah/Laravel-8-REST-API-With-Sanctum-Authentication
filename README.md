@@ -28,3 +28,4 @@
 
 <h3> Authentication Controller : php artisan make:controller AuthController </h3>
 
+## MySQL  Database Upload in : Database/Laravel-8-REST-API-With-Sanctum-Authentication.sql
